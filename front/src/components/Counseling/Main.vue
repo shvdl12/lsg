@@ -24,30 +24,56 @@ export default {
 
   created() {
     this.title = this.buttons[0].name;
+    this.$axios.get('/counseling/list').then(() => {
+      this.checkToken(this.$store.state.token)
+    }).catch((err) => {
+      console.log(err)
+    })
     this.getTermsText()
-    // console.log(this.$router.currentRoute.path)
   },
   components: {
     LeftBar,
     Request,
     CounselingTable
   },
+  computed: {
+    token() {
+        return this.$store.state.token
+    }
+  },
   watch: {
-    '$route' (to, from) {
-      console.log(to)
-      console.log(from)
+    '$route' (to) {
       this.buttons.forEach((value) => {
         if(value.path === to.path) {
           this.title = value.name;
-          console.log(this.title)
         }
       })
+    },
+    token (val) {
+     this.checkToken(val)
     }
   },
   methods: {
     reset() {
       this.isAgreed = false;
       this.$refs.form.reset();
+    },
+    checkToken(token) {
+      if(token) {
+        this.buttons.push(
+          {
+            name: "신청목록",
+            path: "/counseling/list"
+          }
+        )
+      }else {
+        this.buttons = [
+          {
+            name: "대출상담",
+            path: "/counseling/loan"
+          }
+        ]
+      }
     },
     getTermsText() {
       this.$axios.get("/text/termsSub").then((res) => {
@@ -105,10 +131,6 @@ export default {
         {
           name: "대출상담",
           path: "/counseling/loan"
-        },
-        {
-          name: "신청목록",
-          path: "/counseling/list"
         }
       ]
     }

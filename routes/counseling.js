@@ -2,9 +2,32 @@ const express = require('express');
 const router = express.Router();
 const counseling = require('../db/counseling'); 
 const logger = require('../logger');
-const sequelize = require('../db/config');
+const jwt = require('jsonwebtoken')
+const verifyToken = require('../middleware/index');
 
-router.get('/list', async function (req, res, next) {
+router.get('/token', async function (req, res, next) {
+
+  try {
+    const token = jwt.sign({
+      userId: req.body.userId,
+    }, process.env.JWT_SECRET_KEY, {
+      expiresIn: process.env.JWT_EXPIRESIN,
+      issuer: process.env.JWT_ISSUER,
+    });
+
+    res.status(200).json({
+      token: token
+    })
+
+  } catch (err) {
+    logger.error(`${req.originalUrl} error ${JSON.stringify(err.message)}`)
+    res.status(500).json({
+      message: err.message
+    })
+  }
+});
+
+router.get('/list', verifyToken, async function (req, res, next) {
 
   try {
     
@@ -13,7 +36,6 @@ router.get('/list', async function (req, res, next) {
         ['idx', 'DESC']
       ]
     })
-    console.log(result)
 
     res.status(200).json({
       code: 200,
@@ -48,7 +70,7 @@ router.post('/create', async function (req, res, next) {
     })
   }
 });
-router.post('/delete', async function (req, res, next) {
+router.post('/delete', verifyToken, async function (req, res, next) {
 
   try {
 

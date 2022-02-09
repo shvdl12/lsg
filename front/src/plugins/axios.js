@@ -2,6 +2,8 @@
 
 import Vue from 'vue';
 import axios from "axios";
+import store from '../store'
+import router from '../router'
 
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
@@ -31,16 +33,31 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
   function(response) {
     // Do something with response data
-    return response;
+    if(response.data.token) {
+      store.state.token = response.data.token;
+      axios.defaults.headers.common.Authorization = store.state.token;
+
+      // console.log(response.data.token)
+    }
+
+    return Promise.resolve(response);
   },
   function(error) {
     // Do something with response error
+    if(error.response.status === 401) {
+      store.state.token = ''
+      router.push('/counseling/loan')
+    }
+    
+    else if(error.response.status === 500) {
+      alert(error + "\n관리자 문의 바랍니다.")
+    }
+    
     return Promise.reject(error);
   }
 );
 
-Plugin.install = function(Vue, options) {
-  console.log(options)
+Plugin.install = function(Vue) {
   Vue.axios = _axios;
   window.axios = _axios;
   Object.defineProperties(Vue.prototype, {

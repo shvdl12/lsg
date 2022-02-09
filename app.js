@@ -7,16 +7,7 @@ var cookieParser = require('cookie-parser');
 var morganBody = require('morgan-body');
 var bodyParser = require('body-parser');
 
-var indexRouter = require('./routes/index');
-var userRouter = require('./routes/user');
-var deviceRouter = require('./routes/device');
-var msgRouter = require('./routes/msg');
-var viewerRouter = require('./routes/viewer');
-var alarmRouter = require('./routes/alarm');
-var airkrRouter = require('./routes/airkr');
 var textRouter = require('./routes/text');
-var groupRouter = require('./routes/group');
-var memberRouter = require('./routes/groupMember');
 var counselingRouter = require('./routes/counseling');
 
 var app = express();
@@ -32,16 +23,7 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/user', userRouter);
-app.use('/device', deviceRouter);
-app.use('/msg', msgRouter);
-app.use('/viewer', viewerRouter);
-app.use('/alarm', alarmRouter);
-app.use('/airkr', airkrRouter);
 app.use('/text', textRouter);
-app.use('/group', groupRouter);
-app.use('/group/member', memberRouter);
 app.use('/counseling', counselingRouter);
 
 // catch 404 and forward to error handler

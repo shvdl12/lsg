@@ -17,7 +17,17 @@
     </v-card-title>
     <hr style="border: gray dashed 1px; transform: scaleY(0.5)">
     <v-card-text class="pa-0">
-      <v-data-table v-model="selected" item-key="idx" show-select :items="items" :headers="headers" class="elevation-1"  :search="search" />
+      <v-data-table v-model="selected" item-key="idx" show-select :items="items" :headers="headers" class="elevation-1"  :search="search">
+        <template v-if="load === false" v-slot:body >
+        <tr> 
+          <td colspan="10">
+            <div class="text-lg-center pa-5" style="width: 100%;" >
+              <v-progress-circular width="7" size="70" indeterminate color="red" />
+            </div>
+          </td>
+        </tr>
+      </template>
+      </v-data-table>
     </v-card-text>
   </v-card>
   
@@ -36,6 +46,7 @@
           if(res.data.code === 200) {
             this.items = res.data.data
           }
+          this.load=true
         }).catch((err) => {
             console.log(err)
         })
@@ -84,7 +95,8 @@
         ],
         items: [],
         selected: [],
-        search: ''
+        search: '',
+        load: false,
       }
     },
   }

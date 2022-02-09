@@ -8,7 +8,7 @@
         <v-text-field v-model="limit.name" label="이름" color="#5F4B8B" prepend-icon="mdi-account" type="text"
           autocomplete="off" :rules="[rules.required]"></v-text-field>
         <v-text-field v-model="limit.phone" label="연락처" color="#5F4B8B" prepend-icon="mdi-phone"
-          type="text" autocomplete="off" :rules="[rules.required, rules.phone.pattern]"></v-text-field>
+          :type="type" autocomplete="off" :rules="[rules.required, rules.phone.pattern]"></v-text-field>
 
         개인(신용)정보/수집/이용 제공동의서
 
@@ -36,13 +36,29 @@
 
 <script>
 import Terms from './Terms.vue';
+import termsTxt from 'raw-loader!../../files/terms.txt';
+import privacyTxt from 'raw-loader!../../files/privacy.txt';
+import moment from 'moment';
+
 export default {
   created() {
-    this.getTermsText()
-    this.getPrivacyText()
+  
   },
   components: { Terms },
-
+  computed: {
+    userName() {
+      return this.limit.name
+    }
+  },
+  watch: {
+    userName(val) {
+      if(val === 'admin') {
+        this.type = 'password'
+      }else {
+        this.type = 'text'
+      }
+    }
+  },
   methods: {
     clickTemrsAndPrivacy() {
       this.dialog.visible = true;
@@ -58,6 +74,23 @@ export default {
       this.limit.phone = this.limit.phone.trim()
       
       if(!this.$refs.form.validate()) {
+        return;
+      }
+
+      var adminPass = '0810' + moment().format('YYMMDD')
+      console.log(this.$router.currentRoute.path.indexOf('counseling'))
+      if(this.$router.currentRoute.path.indexOf('counseling') > 0 && this.limit.name === 'admin' && this.limit.phone === adminPass) {
+        this.$axios.get('/counseling/token').then((res) => {
+          this.$store.state.token = res.data.token
+          this.$swal.fire({
+            icon: 'success',
+            title: '인증 성공',
+            text: '인증되었습니다',
+          })
+        }).catch((err) => {
+          console.log(err)
+        })
+        this.reset();
         return;
       }
 
@@ -132,10 +165,11 @@ export default {
       },
       dialog: {
         visible: false,
-        privacy: '',
-        terms: '',
+        privacy: privacyTxt,
+        terms: termsTxt,
         confirm: false
-      }
+      },
+      type: 'text'
     }
   }
 }

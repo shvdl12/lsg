@@ -70,10 +70,12 @@
 </template>
 
 <script>
+import terms from 'raw-loader!../../files/termsSub.txt';
+
 export default {
 
   created() {
-    this.getTermsText()
+    
   },
   methods: {
     reset() {
@@ -135,7 +137,6 @@ export default {
         kind: '대출상담'
       },
       isAgreed: false,
-      terms: '',
       rules: {
         required: value => !!value || '필수 입력 항목입니다.',
         phoneNumber: {
@@ -143,7 +144,8 @@ export default {
             return (/^[0-9]{10,11}$/.test(value)) || '숫자만 입력 가능합니다. (10~11자리)'
           }
         }
-      }
+      },
+      terms: terms
     }
   }
 }

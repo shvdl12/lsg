@@ -7,6 +7,11 @@ import Counseling from '@/components/Counseling/Main'
 import Customer from '@/components/Customer/Main'
 import Guide from '@/components/Guide/Main'
 
+// const requireAuth = () => (from, to, next) => {    
+//     if (localStorage.getItem("accessToken")) return next() 
+//     next('/') 
+//   }
+
 
 Vue.use(Router)
 

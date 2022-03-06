@@ -5,43 +5,55 @@
         <left-bar title="대출가이드" :buttons="buttons"/>
       </v-col>
 
-      <!-- <v-col xl="7">
-        <loan-table :title="title" :content="content"/>
-      </v-col> -->
+      <v-col xl="7">
+        <v-card>
+          <v-card-title>
+            <h3> {{title}} </h3>
+          </v-card-title>
+          <hr style="border: gray dashed 1px; transform: scaleY(0.5)">
+          
+          <v-card-text>
+            <loan v-if="title === '대출절차안내'"> </loan>
+            <repay v-else> </repay>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      
     </v-row>
   </v-container>
 </template>
 
 <script>
 import LeftBar from '../Common/LeftBar.vue';
-
+import loan from './Loan.vue'
+import repay from './Repay.vue'
 export default {
 
-  // created() {
-  //   this.buttons.forEach((value) => {
-  //     if(value.path === this.$router.currentRoute.path) {
-  //       this.title = value.name;
-  //       this.content = [];
-  //       this.content.push(value.content)
-  //     }
-  //   })
-  // },
-  components: {
-    LeftBar
+  created() {
+    this.buttons.forEach((value) => {
+      if(value.path === this.$router.currentRoute.path) {
+        this.title = value.name;
+        this.content = [];
+        this.content.push(value.content)
+      }
+    })
   },
-  // watch: {
-  //   '$route' (to, from) {
-  //     console.log(to)
-  //     console.log(from)
-  //     this.buttons.forEach((value) => {
-  //       if(value.path === to.path) {
-  //         this.title = value.name;
-  //         this.content = [];
-  //         this.content.push(value.content)
-  //       }
-  //     })
-  //   }
-  // },
+  components: {
+    LeftBar, loan, repay
+  },
+  watch: {
+    '$route' (to, from) {
+      console.log(to)
+      console.log(from)
+      this.buttons.forEach((value) => {
+        if(value.path === to.path) {
+          this.title = value.name;
+          this.content = [];
+          this.content.push(value.content)
+        }
+      })
+    }
+  },
 
   data() {
     return {

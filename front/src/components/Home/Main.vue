@@ -43,22 +43,22 @@
       <br>
     </v-row>
     
-    <v-row style="margin-top:1%">
+    <!-- <v-row style="margin-top:1%">
       <center-box style="margin-left:10%; "/>
-    </v-row>
+    </v-row> -->
   </v-container>
 </template>
 
 <script>
 
-import CenterBox from './CenterBox.vue'
+// import CenterBox from './CenterBox.vue'
 import LimitCheck from '../Common/LimitCheck.vue'
 
 export default {
   name: 'Main',
   components: {
     LimitCheck,
-    CenterBox
+    // CenterBox
   },
  
   data() {

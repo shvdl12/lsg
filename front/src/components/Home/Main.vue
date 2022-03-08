@@ -3,7 +3,7 @@
     <v-container  fluid >
     <v-row justify="center" style= "background-color: #5F4B8B">
       <v-col lg="6">
-        <img src="@/assets/main_logo.png" style="margin-left:10%">
+        <img src="@/assets/main.png" style="margin-left:10%">
         
         <v-row style="margin-top:1%; border:5px solid white; border-radius:20px" >
           <v-col xl="2" align="center" >

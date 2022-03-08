@@ -74,16 +74,22 @@
         </v-card>
       </v-footer>
 
-      <v-row justify="center" style="margin-top:1%">
-        대출금리 연 20%이내 (연체금리 연 20% 이내) <br>
-        약정금리 +3%이내 <br>
-        대출중개수수료 없음 취급수수료등 기타부대비용없음/상환방법: 원리금균등상환방식 / 만기일시 상환방식 <br>
-        고객센터/상담실:010-5694-5619 <br>
-        중개수수료를 요구하거나 받는것은 불법으로 대출과 관련된 일체 수수료를 받지 않습니다. <br>
-        연체시 불이익:신용등급 하락및 연체이자 발생할 수 있음. 조기상환수수료는 없습니다.<br>
-        과도한 빛은 당신에게 큰 불행을 안겨줄수 있습니다. 이자 외 별도로 중개수수료를 수취하는것은 불법입니다. <br>
-        대출시 귀하의 신용등급이 하락할 수 있습니다. <br>
-      </v-row>
+      <div style="margin-top:1%; text-align: center">
+        <div class="bottom-1">
+          대출금리 연 20%이내 (연체금리 연 20% 이내) <br>
+          약정금리 +3%이내 
+        </div>
+        <div>
+          대출중개수수료 없음 취급수수료등 기타부대비용없음/상환방법: 원리금균등상환방식 / 만기일시 상환방식 <br>
+          고객센터/상담실:010-5694-5619 <br>
+        </div>
+        <div class="bottom-2">
+          중개수수료를 요구하거나 받는것은 불법으로 대출과 관련된 일체 수수료를 받지 않습니다. <br>
+          연체시 불이익:신용등급 하락및 연체이자 발생할 수 있음. 조기상환수수료는 없습니다.<br>
+          과도한 빛은 당신에게 큰 불행을 안겨줄수 있습니다. 이자 외 별도로 중개수수료를 수취하는것은 불법입니다. <br>
+          대출시 귀하의 신용등급이 하락할 수 있습니다. <br>
+        </div>
+      </div>
     </v-container>
   </v-app>
 </template>
@@ -112,10 +118,17 @@ export default {
     font-weight: bold !important;
     font-size: 17px !important;
   }
-
   .tool-btn-small {
     font-weight: 12px !important;
     font-size: 11px !important;
     text-align: start !important;
+  }
+  .bottom-1 {
+    font-size: 37px;
+    font-weight: 500;
+  }
+  .bottom-2 {
+    font-size: 20px;
+    font-weight: 500;
   }
 </style>

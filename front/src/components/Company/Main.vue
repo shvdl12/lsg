@@ -17,7 +17,7 @@
           <v-col xl="8" style="margin-left:5%">
 
             <div class="header">
-              저희 PIL대부중계를 방문해 주신 고객 <br>
+              저희 PIL대부중개를 방문해 주신 고객 <br>
               여러분에게 진심으로 감사드립니다
             </div>
             <br>

@@ -19,7 +19,7 @@
     <div class="content"> &nbsp; &nbsp; - 대출승인이 완료되면 신청서에 작성된 고객님의 연락처로 담당자가 고객님께 대출승인 통보을 합니다. </div> <br>
   
     <div class="title"> 6. 대출통장입금완료</div> 
-    <div class="content"> &nbsp; &nbsp;  - 고객님의 대출통장으로 대출금이 임금됩니다 </div> 
+    <div class="content"> &nbsp; &nbsp;  - 고객님의 대출통장으로 대출금이 입금됩니다 </div> 
   </v-container>  
 </template>
 

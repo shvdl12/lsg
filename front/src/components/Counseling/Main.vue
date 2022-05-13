@@ -60,12 +60,16 @@ export default {
     },
     checkToken(token) {
       if(token) {
-        this.buttons.push(
+         this.buttons = [
           {
+            name: "대출상담",
+            path: "/counseling/loan"
+          },
+            {
             name: "신청목록",
             path: "/counseling/list"
           }
-        )
+        ]
       }else {
         this.buttons = [
           {

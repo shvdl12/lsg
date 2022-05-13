@@ -38,7 +38,7 @@
 import Terms from './Terms.vue';
 import termsTxt from 'raw-loader!../../files/terms.txt';
 import privacyTxt from 'raw-loader!../../files/privacy.txt';
-import moment from 'moment';
+// import moment from 'moment';
 
 export default {
   created() {
@@ -72,21 +72,25 @@ export default {
     limitCheck() {
       this.limit.name = this.limit.name.trim()
       this.limit.phone = this.limit.phone.trim()
-      
-      if(!this.$refs.form.validate()) {
-        return;
-      }
 
-      var adminPass = '0810' + moment().format('YYMMDD')
-      console.log(this.$router.currentRoute.path.indexOf('counseling'))
-      if(this.$router.currentRoute.path.indexOf('counseling') > 0 && this.limit.name === 'admin' && this.limit.phone === adminPass) {
-        this.$axios.get('/counseling/token').then((res) => {
-          this.$store.state.token = res.data.token
-          this.$swal.fire({
-            icon: 'success',
-            title: '인증 성공',
-            text: '인증되었습니다',
-          })
+      if (this.$router.currentRoute.path.indexOf('counseling') > 0 && this.limit.name === 'admin') {
+        this.$axios.post('/counseling/auth', {
+          adminPass: this.limit.phone
+        }).then((res) => {
+          if (res.data.code === 200) {
+            this.$store.state.token = res.data.token
+            this.$swal.fire({
+              icon: 'success',
+              title: '인증 성공',
+              text: '인증되었습니다',
+            })
+          } else {
+            this.$swal.fire({
+              icon: 'error',
+              title: '요청 실패',
+              text: res.data.message,
+            })
+          }
         }).catch((err) => {
           console.log(err)
         })
@@ -94,7 +98,11 @@ export default {
         return;
       }
 
-      if(this.dialog.confirm !== true) {
+      if (!this.$refs.form.validate()) {
+        return;
+      }
+
+      if (this.dialog.confirm !== true) {
         this.$swal.fire({
           icon: 'error',
           title: '요청 실패',
@@ -102,7 +110,7 @@ export default {
         })
         return;
       }
-      if(this.isAgreed !== true) {
+      if (this.isAgreed !== true) {
         this.$swal.fire({
           icon: 'error',
           title: '요청 실패',
@@ -111,13 +119,13 @@ export default {
         return;
       }
       this.$axios.post('/counseling/create', this.limit).then((res) => {
-        if(res.data.code === 200) {
+        if (res.data.code === 200) {
           this.$swal.fire({
             icon: 'success',
             title: '요청 성공',
             text: '접수되었습니다',
           })
-        }else {
+        } else {
           this.$swal.fire({
             icon: 'warning',
             title: '요청 실패',

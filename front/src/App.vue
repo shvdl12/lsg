@@ -2,14 +2,24 @@
   <v-app>
     <v-container fluid>
       <v-row justify="end" align="center" style="background-color: #E2E2E2; border-bottom:1px dashed">
-        <v-col lg="4" align="center">
-          <h4> 피아이엘(PIL)대부중개(2022-서울동대문-0004(대부중개업))</h4>
-        </v-col>
-
-        <v-col lg="4" style="display: flex; " align="right">
+        <v-col lg="12" style="display: flex; " align="left">
+          <h3> 피아이엘(PIL)대부중개(2022-서울동대문-0004(대부중개업))</h3> &nbsp; &nbsp; &nbsp; &nbsp;
           <v-icon largecolor="green darken-2"> mdi-phone-classic</v-icon>
           <h4> 010-5694-5619</h4>
         </v-col>
+
+        
+          
+        
+
+          <!-- <v-col lg="4" align="left">
+          <h3> 피아이엘(PIL)대부중개(2022-서울동대문-0004(대부중개업))</h3>
+        </v-col>
+
+        <v-col lg="4" style="display: flex; " align="left">
+          <v-icon largecolor="green darken-2"> mdi-phone-classic</v-icon>
+          <h4> 010-5694-5619</h4>
+        </v-col> -->
       </v-row>
 
       <v-row justify="center" align="center" style="padding-left: 10%; padding-right: 10%">
@@ -76,8 +86,8 @@
 
       <div style="margin-top:1%; text-align: center">
         <div class="bottom-1">
-          대출금리 연 20%이내 (연체금리 연 20% 이내) <br>
-          약정금리 +3%이내 
+          대출금리 연 20%이내 (약정금리 연 20% 이내) <br>
+          연체금리 +3%이내 
         </div>
         <div>
           대출중개수수료 없음 취급수수료등 기타부대비용없음/상환방법: 원리금균등상환방식 / 만기일시 상환방식 <br>

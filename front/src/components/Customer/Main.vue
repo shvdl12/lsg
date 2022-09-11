@@ -1,11 +1,11 @@
 <template>
   <v-container fluid>
-    <v-row style="padding-left: 25%">
-      <v-col xl="2">
+    <v-row>
+      <v-col xl="2" lg="2" offset-xl="3" offset-lg="2">
         <left-bar title="고객센터" :buttons="buttons" />
       </v-col>
 
-      <v-col xl="8">
+      <v-col xl="5" lg="6">
         <v-card>
           <v-card-title>
             <h3> FAQ </h3>
@@ -20,7 +20,7 @@
             </div>
             <br>
             <v-row class="question">
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-comment-question </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -30,7 +30,7 @@
 
             </v-row>
             <v-row>
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-forum </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -40,7 +40,7 @@
             <br><br>
 
             <v-row class="question">
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-comment-question </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -51,7 +51,7 @@
             </v-row>
 
             <v-row>
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-forum </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -62,7 +62,7 @@
             <br><br>
 
             <v-row class="question">
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-comment-question </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -73,7 +73,7 @@
             </v-row>
 
             <v-row>
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-forum </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -84,7 +84,7 @@
             <br><br>
 
             <v-row class="question">
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-comment-question </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -95,7 +95,7 @@
             </v-row>
 
             <v-row>
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-forum </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -106,7 +106,7 @@
             <br><br>
 
             <v-row class="question">
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-comment-question </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -117,7 +117,7 @@
             </v-row>
 
             <v-row>
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-forum </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -127,7 +127,7 @@
             <br><br>
 
             <v-row class="question">
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-comment-question </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -138,7 +138,7 @@
             </v-row>
 
             <v-row>
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-forum </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -149,7 +149,7 @@
             <br><br>
 
             <v-row class="question">
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-comment-question </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -160,7 +160,7 @@
             </v-row>
 
             <v-row>
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-forum </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -171,7 +171,7 @@
             <br><br>
 
             <v-row class="question">
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-comment-question </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">
@@ -182,7 +182,7 @@
             </v-row>
 
             <v-row>
-              <v-col xl="1" style="padding-bottom: 0px">
+              <v-col xl="1" lg="1" style="padding-bottom: 0px">
                 <v-icon style="width: 100%"> mdi-forum </v-icon>
               </v-col>
               <v-col xl="10" style="padding-bottom: 0px">

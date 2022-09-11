@@ -8,29 +8,29 @@
         <v-card-text>
           <v-form ref="form">
             <v-row  style="margin-top:3%">
-              <v-col  xl="2">
+              <v-col xl="2" lg="2">
                 <h4> 이름 </h4>
               </v-col>
-              <v-col class="pa-0" xl="4">
+              <v-col class="pa-0" xl="4" lg="5">
                 <v-text-field style="font-size: 12px" v-model="user.name" dense outlined color="#5F4B8B"  type="text"
                 autocomplete="off" :rules="[rules.required]"></v-text-field>
               </v-col>
             </v-row>
             <v-row>
-              <v-col xl="2">
+              <v-col xl="2" lg="2">
                 <h4> 연락처 </h4>
               </v-col>
-              <v-col class="pa-0" xl="4">
+              <v-col class="pa-0" xl="4" lg="5">
                 <v-text-field style="font-size: 12px" v-model="user.phone" dense outlined color="#5F4B8B" 
                 type="text" autocomplete="off" :rules="[rules.required, rules.phoneNumber.pattern]"></v-text-field>  
               </v-col>
             </v-row>
 
             <v-row>
-              <v-col xl="2">
+              <v-col xl="2" lg="2">
                 <h4 > 남기고 싶은 말 </h4>
               </v-col>
-              <v-col class="pa-0" xl="7">
+              <v-col class="pa-0" xl="7" lg="7">
                 <v-textarea height="100" style="font-size: 12px" v-model="user.comment" no-resize dense outlined color="#5F4B8B" 
                 type="text" autocomplete="off"></v-textarea>  
               </v-col>

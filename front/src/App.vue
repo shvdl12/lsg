@@ -23,7 +23,7 @@
       </v-row>
 
       <v-row justify="center" align="center" style="padding-left: 10%; padding-right: 10%">
-        <v-col lg="3" align="left">
+        <v-col xl="3" lg="4" align="left">
           <v-btn class="tool-btn" text x-large @click="$router.push('/')"> 피아이엘(PIL) </v-btn>
           <v-btn class="tool-btn-small" text @click="$router.push('/')"> 신뢰를 우선으로하는 기업 </v-btn>
         </v-col>

@@ -1,9 +1,8 @@
 <template>
-  <!-- <v-container  fluid style= "background-color: #E2E2E2"> -->
     <v-container  fluid >
     <v-row justify="center" style= "background-color: #5F4B8B">
-      <v-col lg="6">
-        <img src="@/assets/main.png" style="margin-left:10%">
+      <v-col xl="6" lg="7">
+        <img src="@/assets/main.png">
         
         <v-row style="margin-top:1%; border:5px solid white; border-radius:20px" >
           <v-col xl="2" align="center" >
@@ -34,7 +33,7 @@
         </v-row>
       </v-col>
 
-      <v-col lg="2">
+      <v-col xl="2" lg="3">
         <limit-check />
       </v-col>
     </v-row>

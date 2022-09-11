@@ -1,11 +1,11 @@
 <template>
   <v-container  fluid >
-    <v-row   style="padding-left: 25%">
-      <v-col xl="2">
+    <v-row>
+      <v-col xl="2" lg="2" offset-xl="3" offset-lg="2">
         <left-bar title="대출가이드" :buttons="buttons"/>
       </v-col>
 
-      <v-col xl="7">
+      <v-col xl="5" lg="6">
         <v-card>
           <v-card-title>
             <h3> {{title}} </h3>

@@ -1,14 +1,14 @@
 <template>
   <v-container  fluid >
-    <v-row  style="padding-left: 25%">
-      <v-col xl="2">
+    <v-row >
+      <v-col xl="2" lg="2" offset-xl="3" offset-lg="2">
         <left-bar title="대출상담" :buttons="buttons"/>
       </v-col>
-
-      <v-col v-if="title === '대출상담'" xl="7">
+      
+      <v-col v-if="title === '대출상담'" xl="5" lg="6">
         <request  />
       </v-col>
-      <v-col v-else xl="8">
+      <v-col v-else xl="6" lg="6">
         <counseling-table  /> 
       </v-col>
     </v-row>

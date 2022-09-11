@@ -1,16 +1,13 @@
 <template>
   <v-container fluid>
-    <v-row style="padding-left: 25%">
-      <v-col xl="2">
+    <v-row>
+      <v-col xl="2" lg="2" offset-xl="3" offset-lg="2">
         <left-bar title="회사소개" :buttons="buttons" />
       </v-col>
 
-      <!-- <v-col xl="7">
-        <loan-table :title="title" :content="content"/>
-      </v-col> -->
-      <v-col xl="8" style="margin-top: 5%">
+      <v-col xl="7"  style="margin-top: 5%">
         <v-row>
-          <v-col xl="2">
+          <v-col xl="2" lg="2">
             <img src="@/assets/offcier.png" style="width:100%; height:100%"> 
           </v-col>
 
@@ -94,7 +91,9 @@ export default {
 }
 
 .content {
-  font-size: 17px;
+ font-size: 17px;
+  /* font-size: 1.2em; */
+
   color: gray;
   
 }
